@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="view/css/currency.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="view/js/currency.js"></script>
+    <meta charset="UTF-8">
+    <title>FactSet Currency Converter</title>
+</head>
+<body>
+    <div class="currency-converter">
+        <div id="currency-result"></div>
+
+        <form action="#" method="post">
+            <div>
+                <input type="number" min="0" name="currencyAmount" id="currency-amount" />
+                <select id="currency-from" name="fromCurrency"></select>
+                <select id="currency-to" name="toCurrency"></select>
+            </div>
+            <input type="button" id="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

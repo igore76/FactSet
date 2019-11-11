@@ -1,0 +1,16 @@
+body, input, select, button{
+    font-size: 24px;
+}
+
+input[type=button]{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+div.currency-converter > #result{
+    margin: 4px 2px;
+}
