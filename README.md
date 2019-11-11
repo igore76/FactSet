@@ -1,4 +1,3 @@
-# FactSet
 Bitte schreiben Sie ein PHP-Programm, welches einen Währungsumrechner implementiert.
 
 Folgende Währungen sollten berechnet werden können:
