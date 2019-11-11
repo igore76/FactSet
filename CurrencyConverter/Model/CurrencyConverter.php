@@ -48,9 +48,13 @@ class CurrencyConverter {
         $this->currencyValues = $currencyValues;
     }
 
+    /**
+     * @return array
+     */
     public function getCurrencyValues(){
-
+        return $this->currencyValues;
     }
+
 
     /**
      * @param string $toCurrrency
@@ -66,13 +70,6 @@ class CurrencyConverter {
         $this->amount = $amount;
     }
 
-
-    /**
-     * @return array
-     */
-    public function returnCurrencyValues(){
-        return $this->currencyValues;
-    }
 
     /**
      * Convert Currency

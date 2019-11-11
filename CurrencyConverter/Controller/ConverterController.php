@@ -45,7 +45,7 @@ class ConverterController {
      */
     public function currenciesAction(){
 
-        return json_encode($this->currencyConverter->returnCurrencyValues());
+        return json_encode($this->currencyConverter->getCurrencyValues());
     }
 
     /**
