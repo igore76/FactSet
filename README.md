@@ -18,5 +18,6 @@ Bitte achten Sie bei Ihrer Implementierung darauf, dass sich die Kurse ändern k
 
 **Setup:**
 git clone https://github.com/igore76/FactSet.git
+
 composer install
 
