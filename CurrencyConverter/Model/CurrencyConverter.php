@@ -16,7 +16,10 @@ class CurrencyConverter {
      *
      * @var array
      */
-    private $currencyValues = null;
+    private $currencyValues = array("EUR" => array("USD" => "1.1956", "CHF" => "1.1689", "GBP" => "0.8848"),
+        "USD" => array("JPY" => "111.4500"),
+        "CHF" => array("USD" => "1.0224"),
+        "GBP" => array("CAD" => "1.6933"));
 
 
     /**

@@ -1,0 +1,17 @@
+{
+  "name": "FactSet/CurrencyConverter",
+  "description": "Currency Converter",
+  "minimum-stability": "stable",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Igor Jankovic",
+      "email": "ijankovic@yahoo.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "FactSet\\CurrencyConverter\\": "CurrencyConverter"
+    }
+  }
+}

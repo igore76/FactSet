@@ -12,12 +12,29 @@ class ConverterController {
 
     private $currencyConverter;
 
+    public $postParameter;
+
     /**
      * ConverterController constructor.
      * @param \FactSet\CurrencyConverter\Model\CurrencyConverter $currencyConverter
+     * @param array $postParameter
      */
-    function __construct(CurrencyConverter $currencyConverter) {
+    function __construct(CurrencyConverter $currencyConverter,$postParameter) {
         $this->currencyConverter = $currencyConverter;
+
+        if($postParameter){
+            $action =  isset($postParameter['action']) ? strip_tags($postParameter['action']) : null;
+            if($action == "calculate") {
+                $this->currencyConverter->setFromCurrency(isset($postParameter['from']) ? strip_tags($postParameter['from']) : null);
+                $this->currencyConverter->setToCurrency(isset($postParameter['to']) ? strip_tags($postParameter['to']) : null);
+                $this->currencyConverter->setAmount(isset($postParameter['amount']) ? strip_tags($postParameter['amount']) : null);
+                $this->calculateAction();
+            }
+            else if($action == "currencies"){
+                $this->currenciesAction();
+            }
+        };
+
     }
 
     /**
@@ -37,7 +54,7 @@ class ConverterController {
             $responseArray['message'] = 'check your input data';
         }
 
-        return json_encode($responseArray);
+        echo json_encode($responseArray);
     }
 
     /**
@@ -45,7 +62,7 @@ class ConverterController {
      */
     public function currenciesAction(){
 
-        return json_encode($this->currencyConverter->getCurrencyValues());
+       echo json_encode($this->currencyConverter->getCurrencyValues());
     }
 
     /**
