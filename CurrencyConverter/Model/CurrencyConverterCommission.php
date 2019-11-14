@@ -10,7 +10,7 @@ namespace FactSet\CurrencyConverter\Model;
  * Class CurrencyConverter
  * @package FactSet\CurrencyConverter\Model
  */
-class CurrencyConverter implements CurrencyConverterInterface {
+class CurrencyConverterCommission implements CurrencyConverterInterface {
 
     /**
      *
@@ -36,6 +36,11 @@ class CurrencyConverter implements CurrencyConverterInterface {
      * @var string
      */
     public $amount;
+
+    /**
+     * @var string
+     */
+    public $commission = 1;
 
     /**
      * @param $fromCurrency
@@ -73,6 +78,19 @@ class CurrencyConverter implements CurrencyConverterInterface {
         $this->amount = $amount;
     }
 
+    /**
+     * @param string $procent
+     */
+    public function setCommission($procent){
+        $this->commission = $procent;
+    }
+
+    /**
+     * @param string $procent
+     */
+    public function getCommission(){
+        return $this->commission;
+    }
 
     /**
      * Convert Currency
@@ -81,7 +99,7 @@ class CurrencyConverter implements CurrencyConverterInterface {
      */
     public function calculate() {
         $value = $this->currencyValues[$this->fromCurrency][$this->toCurrency];
-        return number_format(($this->amount * $value), 2);
+        return number_format(($this->amount * $value) * $this->getCommission(), 2);
     }
 }
 

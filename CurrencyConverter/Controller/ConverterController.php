@@ -7,6 +7,7 @@
 namespace FactSet\CurrencyConverter\Controller;
 
 use FactSet\CurrencyConverter\Model\CurrencyConverter;
+use FactSet\CurrencyConverter\Model\CurrencyConverterInterface;
 
 class ConverterController {
 
@@ -19,7 +20,7 @@ class ConverterController {
      * @param \FactSet\CurrencyConverter\Model\CurrencyConverter $currencyConverter
      * @param array $postParameter
      */
-    function __construct(CurrencyConverter $currencyConverter,$postParameter) {
+    function __construct(CurrencyConverterInterface $currencyConverter,$postParameter) {
         $this->currencyConverter = $currencyConverter;
 
         if($postParameter){
