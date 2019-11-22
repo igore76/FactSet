@@ -10,7 +10,8 @@ namespace FactSet\CurrencyConverter\Model;
  * Class CurrencyConverter
  * @package FactSet\CurrencyConverter\Model
  */
-class CurrencyConverterCommission implements CurrencyConverterInterface {
+class CurrencyConverterCommission implements CurrencyConverterInterface
+{
 
     /**
      *
@@ -45,21 +46,24 @@ class CurrencyConverterCommission implements CurrencyConverterInterface {
     /**
      * @param $fromCurrency
      */
-    public function setFromCurrency($fromCurrency){
+    public function setFromCurrency($fromCurrency)
+    {
         $this->fromCurrency = $fromCurrency;
     }
 
     /**
      * @param array $currencyValues
      */
-    public function setCurrencyValues($currencyValues){
+    public function setCurrencyValues($currencyValues)
+    {
         $this->currencyValues = $currencyValues;
     }
 
     /**
      * @return array
      */
-    public function getCurrencyValues(){
+    public function getCurrencyValues()
+    {
         return $this->currencyValues;
     }
 
@@ -67,28 +71,32 @@ class CurrencyConverterCommission implements CurrencyConverterInterface {
     /**
      * @param string $toCurrrency
      */
-    public function setToCurrency($toCurrrency){
+    public function setToCurrency($toCurrrency)
+    {
         $this->toCurrency = $toCurrrency;
     }
 
     /**
      * @param string $amount
      */
-    public function setAmount($amount){
+    public function setAmount($amount)
+    {
         $this->amount = $amount;
     }
 
     /**
      * @param string $procent
      */
-    public function setCommission($procent){
+    public function setCommission($procent)
+    {
         $this->commission = $procent;
     }
 
     /**
      * @param string $procent
      */
-    public function getCommission(){
+    public function getCommission()
+    {
         return $this->commission;
     }
 
@@ -97,9 +105,10 @@ class CurrencyConverterCommission implements CurrencyConverterInterface {
      *
      * @return string
      */
-    public function calculate() {
+    public function calculate()
+    {
         $value = $this->currencyValues[$this->fromCurrency][$this->toCurrency];
-        return number_format(($this->amount * $value) * $this->getCommission(), 2);
+        return ($this->amount * $value) * $this->getCommission();
     }
 }
 

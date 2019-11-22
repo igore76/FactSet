@@ -10,7 +10,8 @@ namespace FactSet\CurrencyConverter\Model;
  * Class CurrencyConverterInterface
  * @package FactSet\CurrencyConverter\Model
  */
-interface CurrencyConverterInterface {
+interface CurrencyConverterInterface
+{
 
     /**
      * @param $fromCurrency
