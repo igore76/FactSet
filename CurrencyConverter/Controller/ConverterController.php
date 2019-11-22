@@ -77,4 +77,3 @@ class ConverterController
         return preg_match("/^[0-9]+(?:\.[0-9]{1,2})?$/", $number);
     }
 }
-

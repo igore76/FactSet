@@ -111,7 +111,3 @@ class CurrencyConverterCommission implements CurrencyConverterInterface
         return (float)(($this->amount * $value) * $this->getCommission());
     }
 }
-
-
-
-

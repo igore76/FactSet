@@ -41,7 +41,3 @@ interface CurrencyConverterInterface
      */
     public function calculate(): float;
 }
-
-
-
-
