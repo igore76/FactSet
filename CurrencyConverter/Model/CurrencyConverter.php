@@ -41,7 +41,7 @@ class CurrencyConverter implements CurrencyConverterInterface
     /**
      * @param $fromCurrency
      */
-    public function setFromCurrency($fromCurrency)
+    public function setFromCurrency(string $fromCurrency)
     {
         $this->fromCurrency = $fromCurrency;
     }
@@ -49,7 +49,7 @@ class CurrencyConverter implements CurrencyConverterInterface
     /**
      * @param array $currencyValues
      */
-    public function setCurrencyValues($currencyValues)
+    public function setCurrencyValues(string $currencyValues)
     {
         $this->currencyValues = $currencyValues;
     }
@@ -57,7 +57,7 @@ class CurrencyConverter implements CurrencyConverterInterface
     /**
      * @return array
      */
-    public function getCurrencyValues()
+    public function getCurrencyValues(): array
     {
         return $this->currencyValues;
     }
@@ -66,7 +66,7 @@ class CurrencyConverter implements CurrencyConverterInterface
     /**
      * @param string $toCurrrency
      */
-    public function setToCurrency($toCurrrency)
+    public function setToCurrency(string $toCurrrency)
     {
         $this->toCurrency = $toCurrrency;
     }
@@ -74,7 +74,7 @@ class CurrencyConverter implements CurrencyConverterInterface
     /**
      * @param string $amount
      */
-    public function setAmount($amount)
+    public function setAmount(string $amount)
     {
         $this->amount = $amount;
     }
@@ -85,10 +85,10 @@ class CurrencyConverter implements CurrencyConverterInterface
      *
      * @return string
      */
-    public function calculate()
+    public function calculate(): string
     {
         $value = $this->currencyValues[$this->fromCurrency][$this->toCurrency];
-        return number_format(($this->amount * $value), 2);
+        return (float)($this->amount * $value);
     }
 }
 

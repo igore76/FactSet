@@ -16,30 +16,30 @@ interface CurrencyConverterInterface
     /**
      * @param $fromCurrency
      */
-    public function setFromCurrency($fromCurrency);
+    public function setFromCurrency(string $fromCurrency);
 
     /**
      * @param array $currencyValues
      */
-    public function setCurrencyValues($currencyValues);
+    public function setCurrencyValues(string $currencyValues);
 
 
     /**
      * @param string $toCurrrency
      */
-    public function setToCurrency($toCurrrency);
+    public function setToCurrency(string $toCurrrency);
 
     /**
      * @param string $amount
      */
-    public function setAmount($amount);
+    public function setAmount(string $amount);
 
     /**
      * Convert Currency
      *
      * @return string
      */
-    public function calculate();
+    public function calculate(): float;
 }
 
 

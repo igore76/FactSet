@@ -50,7 +50,7 @@ class ConverterController
         $responseArray = Array();
         if ($this->currencyConverter->amount != null && $this->isCurrency($this->currencyConverter->amount)) {
             $responseArray['status'] = 'success';
-            $responseArray['answer'] = number_format($this->currencyConverter->calculate(),2);
+            $responseArray['answer'] = number_format($this->currencyConverter->calculate(), 2);
         } else {
             $responseArray['status'] = 'error';
             $responseArray['message'] = 'check your input data';

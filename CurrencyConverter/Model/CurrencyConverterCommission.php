@@ -46,7 +46,7 @@ class CurrencyConverterCommission implements CurrencyConverterInterface
     /**
      * @param $fromCurrency
      */
-    public function setFromCurrency($fromCurrency)
+    public function setFromCurrency(string $fromCurrency)
     {
         $this->fromCurrency = $fromCurrency;
     }
@@ -54,7 +54,7 @@ class CurrencyConverterCommission implements CurrencyConverterInterface
     /**
      * @param array $currencyValues
      */
-    public function setCurrencyValues($currencyValues)
+    public function setCurrencyValues(string $currencyValues)
     {
         $this->currencyValues = $currencyValues;
     }
@@ -62,7 +62,7 @@ class CurrencyConverterCommission implements CurrencyConverterInterface
     /**
      * @return array
      */
-    public function getCurrencyValues()
+    public function getCurrencyValues(): array
     {
         return $this->currencyValues;
     }
@@ -71,7 +71,7 @@ class CurrencyConverterCommission implements CurrencyConverterInterface
     /**
      * @param string $toCurrrency
      */
-    public function setToCurrency($toCurrrency)
+    public function setToCurrency(string $toCurrrency)
     {
         $this->toCurrency = $toCurrrency;
     }
@@ -79,7 +79,7 @@ class CurrencyConverterCommission implements CurrencyConverterInterface
     /**
      * @param string $amount
      */
-    public function setAmount($amount)
+    public function setAmount(string $amount)
     {
         $this->amount = $amount;
     }
@@ -87,7 +87,7 @@ class CurrencyConverterCommission implements CurrencyConverterInterface
     /**
      * @param string $procent
      */
-    public function setCommission($procent)
+    public function setCommission(string $procent)
     {
         $this->commission = $procent;
     }
@@ -105,10 +105,10 @@ class CurrencyConverterCommission implements CurrencyConverterInterface
      *
      * @return string
      */
-    public function calculate()
+    public function calculate(): float
     {
         $value = $this->currencyValues[$this->fromCurrency][$this->toCurrency];
-        return ($this->amount * $value) * $this->getCommission();
+        return (float)(($this->amount * $value) * $this->getCommission());
     }
 }
 
